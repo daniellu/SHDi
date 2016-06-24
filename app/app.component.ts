@@ -1,21 +1,10 @@
 import { Component } from '@angular/core';
-import { Hero } from './hero'
+import { OnInit } from '@angular/core';
+import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroService } from './hero.service';
 
 
-const HEROES: Hero[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' },
-  { id: 21, name: 'Bryan' }
-];
 @Component({
   selector: 'app',
   template: `
@@ -79,13 +68,30 @@ const HEROES: Hero[] = [
       border-radius: 4px 0 0 4px;
     }
   `],
-  directives: [HeroDetailComponent]
+  directives: [HeroDetailComponent],
+  providers: [HeroService]
 
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
+  constructor(private heroService: HeroService) { 
+    
+  }
+
   title: string = 'Tour of Soysauce Heroes';
   subtitle: string = 'My Soysauce Heroes';
-  heroes: Hero[] = HEROES;
+  heroes: Hero[] = null;
   selectedHero: Hero = null;
   onSelect(hero: Hero): void { this.selectedHero = hero; }
+
+  ngOnInit(){
+    console.log('App Component initialize...');
+    this.getHeroesAsync();
+  }
+
+  getHeroesAsync() {
+    this.heroService.getHeroesSlowly().then(herosFromServer => this.heroes = herosFromServer);
+  }
+
+
 }
