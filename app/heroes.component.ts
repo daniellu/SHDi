@@ -31,7 +31,7 @@ export class HeroesComponent  implements OnInit {
   }
 
   getHeroesAsync() {
-    this.heroService.getHeroesSlowly().then(herosFromServer => this.heroes = herosFromServer);
+    this.heroService.getHeroes().then(herosFromServer => this.heroes = herosFromServer);
   }
 
   gotoDetail() {
