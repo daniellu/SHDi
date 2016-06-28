@@ -1,28 +1,42 @@
-h1 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 0;
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
+
+.secondary {
+  color: rgba(0,0,0,0.54);
 }
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
+
+[md-fab] {
+  position: absolute;
+  right: 3%;
+  top: 34px;
+  z-index: 1;
 }
-nav a:visited, a:link {
-  color: #607D8B;
+
+md-sidenav-layout {
+  background: rgba(0,0,0,0.03);
 }
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
+
+md-input {
+  margin: 8px 0;
+  width: 100%;
 }
-nav a.router-link-active {
-  color: #039be5;
+
+md-radio-button, md-checkbox {
+  margin: 16px 8px;
+}
+
+.form {
+  display: flex;
+}
+
+.form md-card {
+  flex-grow: 1;
+}
+
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
 }

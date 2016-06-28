@@ -1,34 +1,36 @@
-<md-sidenav-layout>
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
-    Sidenav
+<md-sidenav-layout fullscreen>
+  <md-sidenav #sidenav>
+    <md-nav-list>
+      <a (click)="sidenav.close()" [routerLink]="['Dashboard']" md-list-item>
+        <md-icon md-list-icon>assignment ind</md-icon>
+        <span md-line>Dashboard</span>
+        <span md-line class="secondary">Dashboard</span>
+      </a>
+      <a (click)="sidenav.close()" [routerLink]="['Heroes']" md-list-item>
+        <md-icon md-list-icon>pets</md-icon>
+        <span md-line>Heroes</span>
+        <span md-line class="secondary">Heroes</span>
+      </a>
+    </md-nav-list>
   </md-sidenav>
 
-  <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
+<md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
     </button>
-
     Angular Material2 Example App
 
     <span class="app-toolbar-filler"></span>
-  </md-toolbar>
+  </md-toolbar>  
 
   <div class="app-content">
-
-    <md-card>
-      <button md-button>FLAT</button>
-      <button md-raised-button>RAISED</button>
-      <button md-raised-button color="primary">PRIMARY RAISED</button>
-      <button md-raised-button color="accent">ACCENT RAISED</button>
-    </md-card>
-
+    <md-card-container>
+      <md-card>
+        <h1>{{title}}</h1>
+        <router-outlet></router-outlet>
+      </md-card>
+    </md-card-container>
   </div>
-
+  
 </md-sidenav-layout>
 
-<h1>{{title}}</h1>
-  <nav>
-    <a [routerLink]="['Dashboard']">Dashboard</a>
-    <a [routerLink]="['Heroes']">Heroes</a>
-  </nav>
-  <router-outlet></router-outlet>
