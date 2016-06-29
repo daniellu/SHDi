@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
 import { Hero } from './../hero';
-import { HeroService } from './../hero.service';
+import { HeroService } from './../services/hero.service';
 
 
 @Component({

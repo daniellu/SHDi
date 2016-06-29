@@ -8,10 +8,10 @@ import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MD_ICON_DIRECTIVES, MdIconRegistry} from '@angular2-material/icon';
 
-import { HeroService }     from './hero.service';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroService }     from './../services/hero.service';
+import { HeroesComponent } from './../heroes/heroes.component';
+import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
+import { DashboardComponent } from './../dashboard/dashboard.component';
 
 @RouteConfig([
   {
@@ -36,8 +36,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app',
-  templateUrl : 'app/app.component.html',
-  styleUrls: ['app/app.component.css'],
+  templateUrl : 'app/app/app.component.html',
+  styleUrls: ['app/app/app.component.css'],
   directives: [
     ROUTER_DIRECTIVES,
     MD_SIDENAV_DIRECTIVES,
