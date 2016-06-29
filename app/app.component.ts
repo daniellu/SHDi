@@ -11,7 +11,7 @@ import {MD_ICON_DIRECTIVES, MdIconRegistry} from '@angular2-material/icon';
 import { HeroService }     from './hero.service';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
-import { DashboardComponent } from './dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @RouteConfig([
   {
