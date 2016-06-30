@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router-deprecated';
+import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import { Hero }                from './../hero';
 import { HeroService }         from './../services/hero.service';
 import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
@@ -7,7 +8,10 @@ import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
   selector: 'my-heroes',
   templateUrl: 'dist/heroes/heroes.component.html',
   styleUrls:  ['dist/heroes/heroes.component.css'],
-  directives: [HeroDetailComponent]
+  directives: [
+    MD_BUTTON_DIRECTIVES, 
+    HeroDetailComponent
+    ]
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
