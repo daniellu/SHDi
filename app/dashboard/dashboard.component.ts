@@ -6,7 +6,7 @@ import { HeroService } from './../services/hero.service';
 
 
 @Component({
-    templateUrl: 'dist/dashboard/dashboard.component.html',
+    templateUrl: 'app/dashboard/dashboard.component.html',
     //styleUrls: ['dist/dashboard.component.css']
 
 })

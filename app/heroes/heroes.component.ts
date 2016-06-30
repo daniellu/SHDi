@@ -6,8 +6,8 @@ import { HeroService }         from './../services/hero.service';
 import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
 @Component({
   selector: 'my-heroes',
-  templateUrl: 'dist/heroes/heroes.component.html',
-  styleUrls:  ['dist/heroes/heroes.component.css'],
+  templateUrl: 'app/heroes/heroes.component.html',
+  styleUrls:  ['app/heroes/heroes.component.css'],
   directives: [
     MD_BUTTON_DIRECTIVES, 
     HeroDetailComponent
