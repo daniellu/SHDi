@@ -12,6 +12,7 @@ import { HeroService }     from './../services/hero.service';
 import { HeroesComponent } from './../heroes/heroes.component';
 import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
 import { DashboardComponent } from './../dashboard/dashboard.component';
+import { WeightChartComponent } from './../weight-chart/weight-chart.component';
 
 @RouteConfig([
   {
@@ -29,6 +30,11 @@ import { DashboardComponent } from './../dashboard/dashboard.component';
   path: '/detail/:id',
   name: 'HeroDetail',
   component: HeroDetailComponent
+  },
+  {
+    path: '/weight',
+    name: 'Weight',
+    component: WeightChartComponent
   },
 
 ])
