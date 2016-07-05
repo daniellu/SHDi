@@ -12,6 +12,7 @@
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     'rxjs':                       'node_modules/rxjs',
     '@angular2-material':         'node_modules/@angular2-material',
+    'ng2-nvd3' : 'node_modules/ng2-nvd3/build/lib'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -19,6 +20,7 @@
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+    'ng2-nvd3':                       { main: 'ng2-nvd3.js', defaultExtension: 'js' },
   };
 
   var ngPackageNames = [
