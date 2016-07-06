@@ -6,7 +6,7 @@ import { Weight } from './../weight';
 export class WeightService {
   private weightUrl = 'app/weights';  // URL to web api
   constructor(private http: Http) { }
-  getHeroes(): Promise<Weight[]> {
+  getWeights(): Promise<Weight[]> {
     return this.http.get(this.weightUrl)
                .toPromise()
                .then(response => response.json().data)

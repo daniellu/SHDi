@@ -12,6 +12,11 @@ export class InMemoryDataService {
       {id: 19, name: 'Magma'},
       {id: 20, name: 'Tornado'}
     ];
-    return {heroes};
+
+    let weights = [
+      {dateTime: '2016-07-04', value: 75.4 },
+      {dateTime: '2016-07-05', value: 74.5 }
+    ];
+    return {heroes, weights};
   }
 }

@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router-deprecated';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_ICON_DIRECTIVES, MdIconRegistry} from '@angular2-material/icon';
-import { Weight }                from './../weight';
+import { Weight } from './../weight';
+import { DataPoint } from './../data-point';
 import { WeightService } from './../services/weight.service';
 import {nvD3} from 'ng2-nvd3';
+
+declare let d3: any;
 
 @Component({
   selector: 'weight-chart',
@@ -22,11 +25,15 @@ export class WeightChartComponent implements OnInit {
   options : any;
   data: any;
   navigated = false; // true if navigated here
+  weights: Weight[];
   constructor(
     private weightService: WeightService) {
   }
-  ngOnInit() {
-    console.log('instantiate weight chart');
+
+  genreateChart(weightData: Weight[]){   
+    
+    let points : DataPoint[] = this.toPoints(weightData);
+    
     this.options = {
       chart: {
         type: 'lineChart',
@@ -39,21 +46,45 @@ export class WeightChartComponent implements OnInit {
         },
         duration: 500,
         xAxis: {
-          axisLabel: 'X Axis'
+          axisLabel: 'Date',
+          tickFormat: function(d:Date) {
+            if(d instanceof Date)
+            {
+              var formatTime = d3.time.format('%x')(d);
+            
+              return formatTime;
+            }
+            return  '';
+            
+          },
+          showMaxMin: false
         },
         yAxis: {
-          axisLabel: 'Y Axis',
+          axisLabel: 'Weight (Kg)',
           axisLabelDistance: -10
         }
       }
-    }
+    };
     this.data = [
       {
-        values: [{x: 1, y: 2}, {x: 2, y: 3}],      //values - represents the array of {x,y} data points
-        key: 'Sine Wave', //key  - the name of the series.
+        values: points,      //values - represents the array of {x,y} data points
+        key: 'Daily Weight', //key  - the name of the series.
         color: '#ff7f0e'
       }
     ];
+
+  }
+
+  ngOnInit() {    
+    this.weightService
+        .getWeights()
+        .then(weights => {this.weights = weights; this.genreateChart(this.weights);})
+        .catch(error => this.error = error); // TODO: Display error message
+  }
+
+  private toPoints(weightData: Weight[]): DataPoint[]{
+    return weightData.map(weight => new DataPoint(new Date(weight.dateTime), weight.value));
+
   }
   
 }

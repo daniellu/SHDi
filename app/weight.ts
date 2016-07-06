@@ -1,4 +1,4 @@
 export class Weight {
-  dateTime: Date;
-  value: Number;
+  dateTime: string;
+  value: number;
 }
