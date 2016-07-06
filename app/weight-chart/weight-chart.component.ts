@@ -47,16 +47,12 @@ export class WeightChartComponent implements OnInit {
         duration: 500,
         xAxis: {
           axisLabel: 'Date',
-          tickFormat: function(d:Date) {
-            if(d instanceof Date)
-            {
-              var formatTime = d3.time.format('%x')(d);
+          // tickFormat: function(d:Date) {
+          //   var formatTime = d3.time.format('%x')(d);
             
-              return formatTime;
-            }
-            return  '';
+          //     return formatTime;
             
-          },
+          // },
           showMaxMin: false
         },
         yAxis: {
@@ -83,7 +79,7 @@ export class WeightChartComponent implements OnInit {
   }
 
   private toPoints(weightData: Weight[]): DataPoint[]{
-    return weightData.map(weight => new DataPoint(new Date(weight.dateTime), weight.value));
+    return weightData.map(weight => new DataPoint(weight.dateTime, weight.value));
 
   }
   
