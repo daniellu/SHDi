@@ -27,11 +27,20 @@
             "request": "attach",
             "port": 3000,
             "address": "localhost",
-            "restart": true,
+            "restart": false,
             "sourceMaps": false,
             "outDir": null,
             "localRoot": "${workspaceRoot}",
             "remoteRoot": null
+        },
+        { 
+            "name": "Launch localhost with sourcemaps", 
+            "type": "chrome", 
+            "request": "launch", 
+            "url": "http://localhost:3000/", 
+            "diagnosticLogging": true,
+            "sourceMaps": true, 
+            "webRoot": "${workspaceRoot}" 
         }
     ]
 }

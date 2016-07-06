@@ -14,7 +14,9 @@ export class InMemoryDataService {
     ];
 
     let weights = [
-      {dateTime: 1467778694666, value: 75.4 },
+      {dateTime: 1466678695666, value: 76.5 },
+      {dateTime: 1466778695666, value: 77.5 },
+      {dateTime: 1467678694666, value: 75.4 },
       {dateTime: 1467778695666, value: 74.5 }
     ];
     return {heroes, weights};

@@ -46,13 +46,10 @@ export class WeightChartComponent implements OnInit {
         },
         duration: 500,
         xAxis: {
-          axisLabel: 'Date',
-          // tickFormat: function(d:Date) {
-          //   var formatTime = d3.time.format('%x')(d);
-            
-          //     return formatTime;
-            
-          // },
+          axisLabel: 'Record Date',
+          tickFormat: function(d:any) {
+            return d3.time.format('%d-%B-%Y')(new Date(d));;
+          },
           showMaxMin: false
         },
         yAxis: {
