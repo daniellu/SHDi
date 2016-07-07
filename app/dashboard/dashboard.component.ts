@@ -3,11 +3,13 @@ import { Router } from '@angular/router-deprecated';
 
 import { Hero } from './../hero';
 import { HeroService } from './../services/hero.service';
+import { WeightChartComponent } from './../weight-chart/weight-chart.component';
 
 
 @Component({
     templateUrl: 'app/dashboard/dashboard.component.html',
     //styleUrls: ['dist/dashboard.component.css']
+    directives: [WeightChartComponent]
 
 })
 
