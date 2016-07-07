@@ -13,6 +13,7 @@ import { HeroesComponent } from './../heroes/heroes.component';
 import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
 import { DashboardComponent } from './../dashboard/dashboard.component';
 import { WeightChartComponent } from './../weight-chart/weight-chart.component';
+import { WeightTableComponent } from './../weight-table/weight-table.component';
 
 @RouteConfig([
   {
@@ -35,6 +36,11 @@ import { WeightChartComponent } from './../weight-chart/weight-chart.component';
     path: '/weight',
     name: 'Weight',
     component: WeightChartComponent
+  },
+  {
+    path: '/weight-table',
+    name: 'WeightTable',
+    component: WeightTableComponent
   },
 
 ])
