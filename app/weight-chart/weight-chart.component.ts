@@ -6,6 +6,7 @@ import { Weight } from './../weight';
 import { DataPoint } from './../data-point';
 import { WeightService } from './../services/weight.service';
 import {nvD3} from 'ng2-nvd3';
+import { WeightTableComponent } from './../weight-table/weight-table.component';
 
 declare let d3: any;
 
@@ -13,7 +14,7 @@ declare let d3: any;
   selector: 'weight-chart',
   templateUrl: 'app/weight-chart/weight-chart.component.html',
   //styleUrls: ['app/hero-detail/hero-detail.component.css'],
-  directives: [nvD3],
+  directives: [nvD3, WeightTableComponent],
   providers: [    
     WeightService,
     MdIconRegistry
